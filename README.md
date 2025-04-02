@@ -10,14 +10,14 @@
   + Laenutamine ja tagastamine
 
 ## Andmebaas
-- raamatute tabel, iga raamatu kohta:
+- raamatute tabel:
   + väljaanne (isbn - vb saab kusagilt apist selle põhjal muid andmeid tõmmata, oleks kasulik raamatute lisamisel)
   + nimi
   + autor
   + id (kindlale füüsilisele raamatule unikaalne) - see ühendaks muude tabelitega
   + staatus (kohal/laenutatud)
   + tagastamiskuupäev (puudub/kp)
-- kasutajate tabel
+- kasutajate tabel:
   + nimi
   + isikukood
   + koduaadress
