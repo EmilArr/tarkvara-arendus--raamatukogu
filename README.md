@@ -1,5 +1,5 @@
 # Tarkvaraarendus - raamatukogu rakendus
-Rambo Raamatud™
+**RamboRaamatud™**
 
 ## Funktsioonid
 - raamatute vaatamine
