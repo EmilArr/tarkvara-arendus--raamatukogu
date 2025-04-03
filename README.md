@@ -3,7 +3,7 @@
 
 ## Funktsioonid
 - raamatute vaatamine
-  + raamatute haldamine (lisamine, eemaldamine ja kui jõuan siis andmete muutmine)
+  + raamatute haldamine (lisamine(isbn põhjal), eemaldamine ja kui jõuab siis andmete muutmine)
 - kasutaja vaade
   + kasutajate haldamine (lisamine, eemaldamine ja kui jõuan siis andmete muutmine) 
 -  Laenutus
@@ -14,6 +14,7 @@
   + väljaanne (isbn - vb saab kusagilt apist selle põhjal muid andmeid tõmmata, oleks kasulik raamatute lisamisel)
   + nimi
   + autor
+  + väljaande aasta
   + id (kindlale füüsilisele raamatule unikaalne) - see ühendaks muude tabelitega
   + staatus (kohal/laenutatud)
   + tagastamiskuupäev (puudub/kp)
