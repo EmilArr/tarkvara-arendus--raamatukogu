@@ -1,4 +1,4 @@
-﻿// siin tuleks osad ära võtta, sest paljusid tegelt ei kasuta ja need on lihtsalt juhenditest kopeerides kaasa tulnud
+// siin tuleks osad ära võtta, sest paljusid tegelt ei kasuta ja need on lihtsalt juhenditest kopeerides kaasa tulnud
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
@@ -29,7 +29,7 @@ namespace Database_Operation // Andmebaasi lisamise funktsioon (internetist võe
             string constr;
             SqlConnection conn;
 
-            constr = @"Data Source=vhk-12r.database.windows.net;Initial Catalog=Rambo;User ID=Rambo;Password=f6t5zW5B"; // tegelt vist ei tohiks niimoodi parooli hardcodeida, Catalog on kaust (?) milles hakkab päringuid tegema, seal andmebaasis on igal tiimil oma kataloog
+            constr = @"Data Source=vhk-12r.database.windows.net;Initial Catalog=Rambo;User ID=Rambo;Password="; // !!!PAROOL PANE SIIA STUUDIUMIST !!!, Catalog on kaust (?) milles hakkab päringuid tegema, seal andmebaasis on igal tiimil oma kataloog
 
             conn = new SqlConnection(constr);
             conn.Open();
