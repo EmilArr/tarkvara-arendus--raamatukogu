@@ -16,12 +16,10 @@
   + autor
   + väljaande aasta
   + id (kindlale füüsilisele raamatule unikaalne) - see ühendaks muude tabelitega
-  + staatus (kohal/laenutatud)
-  + tagastamiskuupäev (puudub/kp)
+  + tagastamiskuupäev (NULL/kp <-- nagu staatus)
 - kasutajate tabel:
   + nimi
   + isikukood
   + koduaadress
-  + laenutatud raamatud
-  + laenutatud raamatute tähtajad
+  + laenutatud raamatud (id vist)
 - neid ühendab nt. laenutatud raamatu id
