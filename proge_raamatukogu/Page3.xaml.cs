@@ -92,5 +92,10 @@ namespace proge_raamatukogu
             tb_Date.Text = string.Empty;
             nameSet = false;
         }
+
+        private void LisaUserID(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
