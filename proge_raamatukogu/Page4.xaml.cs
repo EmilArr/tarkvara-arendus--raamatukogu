@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,32 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Data.SqlClient;
+
+namespace Database_Operation // Andmebaasi lisamise funktsioon (internetist võetud!!!)
+{
+    public class sqlTagastus
+    {
+        public static void Tagasta(string isbn, string isikukood)
+        {
+            string constr;
+            SqlConnection conn;
+
+            constr = @"Data Source=vhk-12r.database.windows.net;Initial Catalog=Rambo;User ID=Rambo;Password=f6t5zW5B"; //VÕTA PAROOL STUUDIUMIST!!!; Catalog on kaust (?) milles hakkab päringuid tegema, seal andmebaasis on igal tiimil oma kataloog
+
+            conn = new SqlConnection(constr);
+            conn.Open();
+
+            string sql = $"UPDATE TOP (1) RAAMATUD \n SET TAGASTAMISKUUPÄEV = NULL \n WHERE ISBN = {isbn} AND TAGASTAMISKUUPÄEV IS NOT NULL;";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+
+            cmd.Dispose();
+            conn.Close();
+        }
+    }
+}
 
 namespace proge_raamatukogu
 {
@@ -37,7 +64,10 @@ namespace proge_raamatukogu
 
         private void Tagasta(object sender, RoutedEventArgs e)
         {
+            string isbn = tb_isbn.Text;
+            string isikukood = tb_isik.Text;
 
+            Database_Operation.sqlTagastus.Tagasta(isbn, isikukood);
         }
     }
 }
