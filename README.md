@@ -1,6 +1,6 @@
 # Tarkvaraarendus - raamatukogu rakendus
 **RamboRaamatud™**
-Rakendus raamatukogutöötajatele - raamatute väljalaenutamine, tagastamine ja andmebaasi lisamine.
+Rakendus raamatukogutöötajatele. Käivitamine peaks toimima läbi "rambo_raamatud" nimelise faili.
 
 ## Funktsioonid
 - raamatute haldamine 
