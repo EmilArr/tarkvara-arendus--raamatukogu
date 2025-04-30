@@ -72,5 +72,10 @@ namespace proge_raamatukogu
                 MessageBox.Show($"Error sisestamisel: {ex.Message}");
             }
         }
+
+        private void LisaUserID(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -25,8 +25,13 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.ColumnSpan="1" Grid.Column="2" Grid.Row="1"
-FontSize="20" FontFamily="Impact" Text="Raamatu tagastamine"
-Margin="0, 5, 0, 15" />
+        <TextBlock Grid.ColumnSpan="1" Grid.Column="2" Grid.Row="1" FontSize="20" FontFamily="Impact" Text="Raamatu tagastamine" Margin="0, 5, 0, 15" />
+        
+        <TextBlock Grid.ColumnSpan="1" Grid.Column="1" Grid.Row="2" FontSize="20" Text="ISBN:"/>
+        <TextBox x:Name="tb_isbn" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="1" TextWrapping="Wrap" TextChanged="ISBN" ></TextBox>
+
+        <TextBlock Grid.ColumnSpan="1" Grid.Column="1" Grid.Row="3" FontSize="20" Text="Isikukood:" Margin="0 20 10 0"/>
+        <TextBox x:Name="tb_isik" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="1" TextWrapping="Wrap" TextChanged="isikukood" Margin="0 20 0 0" ></TextBox>
+        <Button x:Name="tagastaRaamat" Grid.Column="2" Grid.Row="4" Content="Tagasta" Margin="0 20 0 0" Click="Tagasta"/>
     </Grid>
 </Page>

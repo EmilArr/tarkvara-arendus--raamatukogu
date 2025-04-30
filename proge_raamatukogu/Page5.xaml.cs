@@ -24,5 +24,20 @@ namespace proge_raamatukogu
         {
             InitializeComponent();
         }
+
+        private void ISBN(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void isikukood(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Laenuta(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
