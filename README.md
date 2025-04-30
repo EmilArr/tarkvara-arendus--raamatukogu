@@ -1,13 +1,12 @@
 # Tarkvaraarendus - raamatukogu rakendus
 **RamboRaamatud™**
+Rakendus raamatukogutöötajatele - raamatute väljalaenutamine, tagastamine ja andmebaasi lisamine.
 
 ## Funktsioonid
-- raamatute vaatamine
-  + raamatute haldamine (lisamine(isbn põhjal), eemaldamine ja kui jõuab siis andmete muutmine)
-- kasutaja vaade
-  + kasutajate haldamine (lisamine, eemaldamine ja kui jõuan siis andmete muutmine) 
--  Laenutus
-  + Laenutamine ja tagastamine
+- raamatute haldamine 
+  + lisamine ISBN põhjal openlibrary API abil
+- kasutajate lisamine
+- laenutamine ja tagastamine
 
 ## Andmebaas
 - raamatute tabel:
