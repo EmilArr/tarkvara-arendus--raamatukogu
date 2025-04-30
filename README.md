@@ -1,6 +1,6 @@
 # Tarkvaraarendus - raamatukogu rakendus
 **RamboRaamatud™**
-Rakendus raamatukogutöötajatele. Käivitamine peaks toimima läbi bin kaustas oleva setupi.
+Rakendus raamatukogutöötajatele. Installi releaside juurest.
 ## Funktsioonid
 - raamatute haldamine 
   + lisamine ISBN põhjal openlibrary API abil
