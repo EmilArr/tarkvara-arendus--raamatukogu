@@ -1,23 +1,8 @@
-﻿// siin tuleks osad ära võtta, sest paljusid tegelt ei kasuta ja need on lihtsalt juhenditest kopeerides kaasa tulnud
-using System.Collections.Generic;
+﻿using System;
 using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Collections;
 using Microsoft.Data.SqlClient; // !! Peab eraldi installima !! --> Tools>NuGet Package Manager>Manage NuGet packages for solution> installi Microsoft.Data.SqlClient
 
 namespace Database_Operation // Andmebaasi lisamise funktsioon (internetist võetud!!!)

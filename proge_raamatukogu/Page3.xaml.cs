@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using Database_Operation;
 using Microsoft.Data.SqlClient;
 
 namespace Database_Operation // Andmebaasi lisamise funktsioon (internetist võetud!!!)

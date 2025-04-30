@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Data.SqlClient;
 
 namespace Database_Operation
@@ -21,13 +10,13 @@ namespace Database_Operation
     {
         public static void Laenuta(string isbn, string kp, string isikukood) 
         {
-            string kp_t = DateTime.ParseExact(kp, "dd/MM/yyyy", CultureInfo.InvariantCulture).AddDays(14).ToString("dd/MM/yyyy");
+            string kp_t = DateTime.ParseExact(kp, "dd/MM/yyyy", CultureInfo.InvariantCulture).AddDays(30).ToString("dd/MM/yyyy");
             string constr = @"Data Source=vhk-12r.database.windows.net;Initial Catalog=Rambo;User ID=Rambo;Password=f6t5zW5B"; //VÕTA PAROOL STUUDIUMIST!!!; Catalog on kaust (?) milles hakkab päringuid tegema, seal andmebaasis on igal tiimil oma kataloog
 
             SqlConnection conn = new SqlConnection(constr);
             conn.Open();
 
-            string ID_sqlQuery = $"SELECT TOP(1) ID FROM RAAMATUD WHERE ISBN = {isbn} AND TAGASTAMISKUUPÄEV IS NULL ORDER BY ID;";
+            string ID_sqlQuery = $"SELECT TOP(1) ID FROM RAAMATUD WHERE ISBN = '{isbn}' AND TAGASTAMISKUUPÄEV IS NULL ORDER BY ID;";
             SqlCommand ID_sqlCmd = new SqlCommand(ID_sqlQuery, conn);
             string ID = ID_sqlCmd.ExecuteScalar()?.ToString() ?? "";
 
@@ -41,7 +30,7 @@ namespace Database_Operation
             kasutajaU_sqlCmd.ExecuteNonQuery();
 
 
-            string raamatudU_sqlQuery = $"UPDATE TOP (1) RAAMATUD \n SET TAGASTAMISKUUPÄEV = '{kp_t}' \n WHERE ISBN = {isbn} AND TAGASTAMISKUUPÄEV IS NULL;";
+            string raamatudU_sqlQuery = $"UPDATE TOP (1) RAAMATUD \n SET TAGASTAMISKUUPÄEV = '{kp_t}' \n WHERE ISBN = '{isbn}' AND TAGASTAMISKUUPÄEV IS NULL;";
 
             SqlCommand raamatudU_sqlCmd = new SqlCommand(raamatudU_sqlQuery, conn);
             raamatudU_sqlCmd.ExecuteNonQuery();

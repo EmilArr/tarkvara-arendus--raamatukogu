@@ -1,19 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Data.SqlClient;
 
 namespace Database_Operation // Andmebaasi lisamise funktsioon (internetist võetud!!!)
@@ -34,7 +21,7 @@ namespace Database_Operation // Andmebaasi lisamise funktsioon (internetist võe
             List<string> raamatudList = raamatud.Split(',').ToList();
             for (int i = 0; i < raamatudList.Count; i++)
             {
-                string checkIsbnQuery = $"SELECT ISBN FROM RAAMATUD WHERE ID = {raamatudList[i]};";
+                string checkIsbnQuery = $"SELECT ISBN FROM RAAMATUD WHERE ID = '{raamatudList[i]}';";
                 SqlCommand checkIsbnCmd = new SqlCommand(checkIsbnQuery, conn);
                 string foundIsbn = checkIsbnCmd.ExecuteScalar()?.ToString() ?? "";
                     
@@ -82,6 +69,8 @@ namespace proge_raamatukogu
             string isikukood = tb_isik.Text;
 
             Database_Operation.sqlTagastus.Tagasta(isbn, isikukood);
+            (string raamat, string inimene) = Database_Operation.andmed.nimed(isbn, isikukood);
+            MessageBox.Show($"{inimene} tagastas raamatu \"{raamat}\"");
         }
     }
 }
