@@ -31,12 +31,12 @@ namespace Database_Operation
             SqlCommand ID_sqlCmd = new SqlCommand(ID_sqlQuery, conn);
             string ID = ID_sqlCmd.ExecuteScalar()?.ToString() ?? "";
 
-            string raamatud_sqlQuery = $"SELECT RAAMATUD FROM KASUTAJAD WHERE ISIKUKOOD = {isikukood};";
+            string raamatud_sqlQuery = $"SELECT RAAMATUD FROM KASUTAJAD WHERE ISIKUKOOD = '{isikukood}';";
             SqlCommand raamatud_sqlCmd = new SqlCommand(raamatud_sqlQuery, conn);
             string raamatud = raamatud_sqlCmd.ExecuteScalar()?.ToString() ?? "";
 
             string raamatudU = string.IsNullOrEmpty(raamatud) ? ID : raamatud + "," + ID;
-            string kasutajaU_sqlQuery = $"UPDATE KASUTAJAD SET RAAMATUD = '{raamatudU}' WHERE ISIKUKOOD = {isikukood};";
+            string kasutajaU_sqlQuery = $"UPDATE KASUTAJAD SET RAAMATUD = '{raamatudU}' WHERE ISIKUKOOD = '{isikukood}';";
             SqlCommand kasutajaU_sqlCmd = new SqlCommand(kasutajaU_sqlQuery, conn);
             kasutajaU_sqlCmd.ExecuteNonQuery();
 
@@ -59,11 +59,11 @@ namespace Database_Operation
             SqlConnection conn = new SqlConnection(constr);
             conn.Open();
 
-            string r_andmed_query = $"SELECT VÄLJAANNE FROM RAAMATUD WHERE ISBN = {isbn};";
+            string r_andmed_query = $"SELECT VÄLJAANNE FROM RAAMATUD WHERE ISBN = '{isbn}';";
             SqlCommand r_andmed_cmd = new SqlCommand(r_andmed_query, conn);
             string raamatuNimi = r_andmed_cmd.ExecuteScalar()?.ToString() ?? "";
 
-            string i_andmed_query = $"SELECT NAME FROM KASUTAJAD WHERE ISIKUKOOD = {isikukood};";
+            string i_andmed_query = $"SELECT NAME FROM KASUTAJAD WHERE ISIKUKOOD = '{isikukood}';";
             SqlCommand i_andmed_cmd = new SqlCommand(i_andmed_query, conn);
             string inimeseNimi = i_andmed_cmd.ExecuteScalar()?.ToString() ?? "";
 
@@ -79,9 +79,6 @@ namespace Database_Operation
 
 namespace proge_raamatukogu
 {
-    /// <summary>
-    /// Interaction logic for Page5.xaml
-    /// </summary>
     public partial class Page5 : Page
     {
         public Page5() { InitializeComponent(); }
@@ -89,7 +86,8 @@ namespace proge_raamatukogu
         private void isikukood(object sender, TextChangedEventArgs e) {}
 
         // TESTIMISEKS: ISBN 9789985325933
-        //                   9780747542988
+        //                   9780747542988 
+        //                   9781515190998
 
         private void Laenuta(object sender, RoutedEventArgs e)
         {

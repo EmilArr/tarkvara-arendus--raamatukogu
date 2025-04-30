@@ -20,23 +20,18 @@
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="1" Grid.Row="1"
-                   FontSize="20" FontFamily="Impact" 
-                   Text="Kasutaja lisamine"
-                   Margin="0,5,0,15" />
+        <!-- UI Controls placed after Grid's definitions -->
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="20" FontFamily="Impact" Text="Kasutaja lisamine" Margin="0,5,0,15" />
 
-        <TextBox x:Name="tb_nimi" Grid.Column="1" Grid.Row="2"
-                 TextWrapping="Wrap" />
+        <TextBlock Grid.Column="1" Grid.Row="2" FontSize="20" Text="Nimi: " Margin="0 20 0 0"/>
+        <TextBox x:Name="tb_nimi" Grid.Column="2" Grid.Row="2" TextWrapping="Wrap" Margin="0 20 0 0" TextChanged="nimi" />
 
-        <TextBlock Grid.Column="1" Grid.Row="3"
-                   FontSize="20" FontFamily="Impact" 
-                   Text="Kasutaja ID lisamine" Margin="0,10,0,15" />
+        <TextBlock Grid.Column="1" Grid.Row="3" FontSize="20" Text="Isikukood: " Margin="0 20 0 0"/>
+        <TextBox x:Name="tb_isikukood" Grid.Column="2" Grid.Row="3" TextWrapping="Wrap" Margin="0 20 0 0" TextChanged="isikukood" />
 
-        <TextBox x:Name="tb_UserID" Grid.Column="1" Grid.Row="4"
-                 TextWrapping="Wrap" />
+        <TextBlock Grid.Column="1" Grid.Row="4" FontSize="20" Text="Aadress: " Margin="0 20 0 0"/>
+        <TextBox x:Name="tb_aadress" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap" Margin="0 20 0 0" TextChanged="aadress" />
 
-      
-        <Button x:Name="btnSaveAll" Grid.Column="1" Grid.Row="5"
-                Content="Salvesta Kõik" Margin="0,20,0,0" Click="SaveAllTextBoxes" />
+        <Button x:Name="LisaK" Grid.Column="2" Grid.Row="5" Content="Lisa" Margin="0,20,0,0" Click="Lisa"/>
     </Grid>
 </Page>
