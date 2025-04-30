@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Windows;
-using Microsoft.Data.SqlClient; 
+using Microsoft.Data.SqlClient;
+using Database_Operation;
+
 namespace proge_raamatukogu
 {
     public class KasutajadRepository
     {
-       private readonly string connectionString = "Data source=vhk-12r.database.windows.net;Initial Catalog=Rambo; User ID=Rambo;Password=SQL123go";
+        // ma ei saa aru, mis selle connection stringiga viga on
+        // see annab errori: login failed user Rambo
+        private readonly string connectionString =
+            "Data Source=vhk-12r.database.windows.net;Initial Catalog=Rambo;User ID=Rambo;Password=UtNZj6Kp;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        
-        /// <param name="name">The user's name.</param>
-        /// <param name="createdDate">The creation date for the record.</param>
-        public void InsertKasutaja(string name, DateTime createdDate)
+        public void InsertKasutaja(string name)
         {
-            
             string query = "INSERT INTO KASUTAJAD (NAME, CreatedDate) VALUES (@name, @createdDate)";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    
                     cmd.Parameters.AddWithValue("@name", name);
-                    cmd.Parameters.AddWithValue("@createdDate", createdDate);
+                    cmd.Parameters.AddWithValue("@createdDate", DateTime.Now);
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -32,12 +32,6 @@ namespace proge_raamatukogu
 
     public partial class Page3 : System.Windows.Controls.Page
     {
-        private string userName = string.Empty;
-        private long userId; 
-        private DateTime createdDate;
-        private bool nameSet = false;
-
-     
         private readonly KasutajadRepository repo = new KasutajadRepository();
 
         public Page3()
@@ -45,52 +39,38 @@ namespace proge_raamatukogu
             InitializeComponent();
         }
 
-        private void LisaUser(object sender, RoutedEventArgs e)
+        private void SaveAllTextBoxes(object sender, RoutedEventArgs e)
         {
-            userName = tb_nimi.Text.Trim();
+            string userName = tb_nimi.Text.Trim();
+            string userIdText = tb_UserID.Text.Trim();
+
+            // Kontrollib nime
             if (string.IsNullOrEmpty(userName))
             {
                 MessageBox.Show("Palun sisesta sobiv nimi.");
                 return;
             }
-            nameSet = true;
-            MessageBox.Show("Nimi: " + userName);
-        }
-        private void LisaDate(object sender, RoutedEventArgs e)
-        {
-            if (DateTime.TryParse(tb_Date.Text.Trim(), out DateTime parsedDate))
+
+            // Kontrollib user ID
+            if (!long.TryParse(userIdText, out long userId))
             {
-                createdDate = parsedDate;
-                if (!nameSet)
-                {
-                    MessageBox.Show("Palun sisesta nimi enne kuupäeva.");
-                    return;
-                }
-
-                try
-                {
-                    repo.InsertKasutaja(userName, createdDate);
-                    MessageBox.Show("Kasutaja lisatud!");
-
-                    ClearFields();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error sisestamisel: " + ex.Message);
-                }
+                MessageBox.Show("Palun sisesta kehtiv kasutaja ID (numbriline väärtus).");
+                return;
             }
-            else
+
+            try
             {
-                MessageBox.Show("Lisa korrektses formaadis.");
-            }
-        }
+                repo.InsertKasutaja(userName);
+                MessageBox.Show($"Kasutaja lisatud!\nNimi: {userName}");
 
-        private void ClearFields()
-        {
-            tb_nimi.Text = string.Empty;
-            tb_UserID.Text = string.Empty; 
-            tb_Date.Text = string.Empty;
-            nameSet = false;
+                // kustutab textboxid.
+                tb_nimi.Text = string.Empty;
+                tb_UserID.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error sisestamisel: {ex.Message}");
+            }
         }
     }
 }

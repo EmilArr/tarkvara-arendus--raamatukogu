@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\kaurl\\OneDrive\\Documents\\tarkvara-arendus--raamatukogu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{47EB1BFD-743F-4700-83D3-2DDD239DAEF6}|proge_raamatukogu\\proge_raamatukogu.csproj|c:\\users\\kaurl\\onedrive\\documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\page3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{47EB1BFD-743F-4700-83D3-2DDD239DAEF6}|proge_raamatukogu\\proge_raamatukogu.csproj|solutionrelative:proge_raamatukogu\\page3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{47EB1BFD-743F-4700-83D3-2DDD239DAEF6}|proge_raamatukogu\\proge_raamatukogu.csproj|c:\\users\\kaurl\\onedrive\\documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\page2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47EB1BFD-743F-4700-83D3-2DDD239DAEF6}|proge_raamatukogu\\proge_raamatukogu.csproj|solutionrelative:proge_raamatukogu\\page2.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47EB1BFD-743F-4700-83D3-2DDD239DAEF6}|proge_raamatukogu\\proge_raamatukogu.csproj|c:\\users\\kaurl\\onedrive\\documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\page3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47EB1BFD-743F-4700-83D3-2DDD239DAEF6}|proge_raamatukogu\\proge_raamatukogu.csproj|solutionrelative:proge_raamatukogu\\page3.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{47EB1BFD-743F-4700-83D3-2DDD239DAEF6}|proge_raamatukogu\\proge_raamatukogu.csproj|c:\\users\\kaurl\\onedrive\\documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\page3.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -70,13 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Page3.xaml.cs",
               "DocumentMoniker": "C:\\Users\\kaurl\\OneDrive\\Documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\Page3.xaml.cs",
               "RelativeDocumentMoniker": "proge_raamatukogu\\Page3.xaml.cs",
               "ToolTip": "C:\\Users\\kaurl\\OneDrive\\Documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\Page3.xaml.cs",
               "RelativeToolTip": "proge_raamatukogu\\Page3.xaml.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwDYAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T06:52:53.715Z",
               "EditorCaption": ""
@@ -101,20 +101,20 @@
               "RelativeDocumentMoniker": "proge_raamatukogu\\obj\\Debug\\net8.0-windows\\Page3.g.cs",
               "ToolTip": "C:\\Users\\kaurl\\OneDrive\\Documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\obj\\Debug\\net8.0-windows\\Page3.g.cs",
               "RelativeToolTip": "proge_raamatukogu\\obj\\Debug\\net8.0-windows\\Page3.g.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAGAAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-28T22:05:11.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Page2.xaml.cs",
               "DocumentMoniker": "C:\\Users\\kaurl\\OneDrive\\Documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\Page2.xaml.cs",
               "RelativeDocumentMoniker": "proge_raamatukogu\\Page2.xaml.cs",
               "ToolTip": "C:\\Users\\kaurl\\OneDrive\\Documents\\tarkvara-arendus--raamatukogu\\proge_raamatukogu\\Page2.xaml.cs",
               "RelativeToolTip": "proge_raamatukogu\\Page2.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAqwB8AAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T06:19:21.852Z",
               "EditorCaption": ""
