@@ -85,10 +85,6 @@ namespace proge_raamatukogu
         private void ISBN(object sender, TextChangedEventArgs e) {}
         private void isikukood(object sender, TextChangedEventArgs e) {}
 
-        // TESTIMISEKS: ISBN 9789985325933
-        //                   9780747542988 
-        //                   9781515190998
-
         private void Laenuta(object sender, RoutedEventArgs e)
         {
             string isbn = tb_isbn.Text;
@@ -97,8 +93,12 @@ namespace proge_raamatukogu
             
             Database_Operation.sqlLaenutus.Laenuta(isbn, kp, isikukood);
             (string raamat, string inimene) = Database_Operation.andmed.nimed(isbn, isikukood);
-            MessageBox.Show($"{inimene} laenutas raamatu {raamat}");
+            MessageBox.Show($"{inimene} laenutas raamatu \"{raamat}\"");
 
         }
     }
 }
+
+// TESTIMISEKS: ISBN 9789985325933
+//                   9780747542988 
+//                   9781515190998
